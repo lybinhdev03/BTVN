@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "TimSoHH";
+}
+
+<h2>Tìm Số Hoàn Hảo</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Nhập n: ")
+    <br>
+    @Html.TextBox("n")
+    <br>
+    <input type="submit" value="Submit" />
+}
+
+@if (ViewBag.PerfectNumbers != null && ViewBag.PerfectNumbers.Count > 0)
+{
+    <h4>Các số hoàn hảo từ 1 đến @ViewBag.N:</h4>
+    <ul>
+        @foreach (var number in ViewBag.PerfectNumbers)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
+else if (ViewBag.PerfectNumbers != null)
+{
+    <h4>Không có số hoàn hảo nào trong khoảng từ 1 đến @ViewBag.N</h4>
+}

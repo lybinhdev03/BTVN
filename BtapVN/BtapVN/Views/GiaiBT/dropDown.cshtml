@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "dropDown";
+}
+
+<h2>dropDown</h2>
+@{ Html.BeginForm();}
+@Html.Label("Select your address: ")
+<br>
+@Html.DropDownList("address", new SelectList(
+new[] { "Ha Noi", "Sai Gon", "Da Nang", "Ho Chi Minh" }), "Select address")
+<br>
+<input type="submit" value="submit">
+@{ Html.EndForm();}
+<h4>@ViewBag.smg</h4>
+

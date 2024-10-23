@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Tìm Số Chính Phương";
+}
+
+<h2>Tìm Số Chính Phương</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Nhập các số (cách nhau bằng dấu phẩy): ")
+    <br>
+    @Html.TextBox("numbers")
+    <br>
+    <input type="submit" value="Submit" />
+}
+
+@if (ViewBag.SquareNumbers != null && ViewBag.SquareNumbers.Count > 0)
+{
+    <h4>Các số chính phương trong mảng:</h4>
+    <ul>
+        @foreach (var number in ViewBag.SquareNumbers)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
+else if (ViewBag.SquareNumbers != null)
+{
+    <h4>Không có số chính phương nào trong mảng đã nhập</h4>
+}

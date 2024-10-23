@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BtapVN.Models.SinhVien>
+
+@{
+    ViewBag.Title = "ThemSinhVien";
+}
+
+<h2>NhanDLSV</h2>
+
+@{ var sinhvien = Model;}
+
+@foreach (var sv1 in sinhvien)
+{
+    <strong>Mã sinh viên: @sv1.MaSinhVien</strong>
+    <p>Họ tên: @sv1.HoTen</p>
+    <p>Ngày sinh: @sv1.NgaySinh.ToShortDateString()</p>
+    <p>Giới tính: @sv1.GioiTinh</p>
+    <p>Quê quán: @sv1.QueQuan</p>
+    <p>Lớp học: @sv1.LopHoc</p>
+}
+

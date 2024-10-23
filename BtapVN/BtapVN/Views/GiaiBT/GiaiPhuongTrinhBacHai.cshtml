@@ -1,0 +1,32 @@
+﻿@model BtapVN.Models.PhuongTrinhBacHai
+
+@{
+    ViewBag.Title = "Giải Phương Trình Bậc Hai";
+}
+
+<h2>Giải Phương Trình Bậc Hai</h2>
+
+@using (Html.BeginForm("GiaiPhuongTrinhBacHai", "GiaiBT", FormMethod.Post))
+{
+    <div>
+        @Html.Label("Hệ số a:")
+        @Html.TextBoxFor(model => model.A)
+    </div>
+    <div>
+        @Html.Label("Hệ số b:")
+        @Html.TextBoxFor(model => model.B)
+    </div>
+    <div>
+        @Html.Label("Hệ số c:")
+        @Html.TextBoxFor(model => model.C)
+    </div>
+    <div>
+        <input type="submit" value="Giải phương trình" />
+    </div>
+}
+
+@if (ViewBag.Result != null)
+{
+    <h4>Kết quả:</h4>
+    <p>@ViewBag.Result</p>
+}
